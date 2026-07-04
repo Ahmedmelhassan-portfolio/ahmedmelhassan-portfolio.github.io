@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Mohammed Elhassan — Civil Engineer</title>
+<meta name="description" content="Portfolio of Ahmed Mohammed Elhassan Ahmed — Civil Engineer (B.Sc. 2026, Karadeniz Technical University). Broad civil engineering training, site experience, and engineering software tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN TOKENS — "Drawing Set" system (light + dark themes)
+   ============================================================ */
+:root{
+  --paper:#F6F7F4;
+  --paper-2:#EFF1EC;
+  --ink:#1B262C;
+  --ink-soft:#45535B;
+  --blue:#235789;
+  --blue-deep:#163A5C;
+  --line:#C6CDCB;
+  --line-soft:#DDE1DE;
+  --card:#FFFFFF;
+  --nav-bg:rgba(246,247,244,.92);
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --sans:'Archivo',system-ui,sans-serif;
+  --maxw:1080px;
+}
+html[data-theme="dark"]{
+  --paper:#14181A;
+  --paper-2:#1C2124;
+  --ink:#E9ECE8;
+  --ink-soft:#A8B3AE;
+  --blue:#7FB0DE;
+  --blue-deep:#A9CBEA;
+  --line:#39424680;
+  --line-soft:#20262A;
+  --card:#1B2124;
+  --nav-bg:rgba(20,24,26,.92);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
+body{
+  font-family:var(--sans);
+  font-weight:400;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size:32px 32px;
+  transition:background-color .3s ease,color .3s ease;
+}
+html[lang="ar"] body,
+html[lang="ar"] .sheet-title, html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3{
+  font-family:'Noto Sans Arabic',var(--sans);
+}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+img{max-width:100%;display:block}
+
+/* ============================================================
+   SCROLL REVEAL + HERO ENTRANCE ANIMATIONS
+   ============================================================ */
+html.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+html.js .reveal.in{opacity:1;transform:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.hero > div > *{animation:fadeUp .7s ease both}
+.hero > div > *:nth-child(1){animation-delay:.05s}
+.hero > div > *:nth-child(2){animation-delay:.15s}
+.hero > div > *:nth-child(3){animation-delay:.25s}
+.hero > div > *:nth-child(4){animation-delay:.35s}
+.hero .titleblock{animation:fadeUp .7s ease .3s both}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:var(--nav-bg);backdrop-filter:blur(6px);
+  border-bottom:1.5px solid var(--ink);
+}
+.nav-inner{
+  max-width:var(--maxw);margin:0 auto;padding:.6rem 1.25rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.nav-links{display:flex;gap:1.2rem;flex-wrap:wrap}
+.nav-links a{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-soft);position:relative;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:-3px;width:0;height:1.5px;background:var(--blue);
+  transition:width .25s ease;
+}
+.nav-links a:hover{color:var(--blue);text-decoration:none}
+.nav-links a:hover::after{width:100%}
+.nav-ctl{display:flex;align-items:center;gap:.5rem}
+.lang-switch{display:flex;border:1.5px solid var(--ink)}
+.lang-switch button{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;
+  padding:.3rem .55rem;background:var(--card);color:var(--ink-soft);
+  border:none;cursor:pointer;transition:background .15s,color .15s;
+}
+.lang-switch button + button{border-inline-start:1px solid var(--line)}
+.lang-switch button.active{background:var(--blue);color:#fff}
+.lang-switch button:not(.active):hover{color:var(--blue)}
+#themeToggle{
+  font-size:.95rem;line-height:1;padding:.3rem .55rem;cursor:pointer;
+  background:var(--card);color:var(--ink);border:1.5px solid var(--ink);
+  transition:background .15s,color .15s;
+}
+#themeToggle:hover{background:var(--ink);color:var(--paper)}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* ============================================================
+   SHEET FRAME
+   ============================================================ */
+.sheet{max-width:var(--maxw);margin:0 auto;padding:4.5rem 1.25rem 3.5rem}
+.sheet-head{
+  display:flex;align-items:baseline;gap:1rem;margin-bottom:2.2rem;
+  border-bottom:1.5px solid var(--ink);padding-bottom:.6rem;position:relative;
+}
+.sheet-head::after,.sheet-head::before{
+  content:"";position:absolute;bottom:-5px;width:1.5px;height:9px;background:var(--ink);
+}
+.sheet-head::after{right:0}
+.sheet-head::before{left:0}
+.sheet-no{
+  font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.1em;
+  color:#fff;background:var(--blue);padding:.2rem .55rem;
+}
+html[data-theme="dark"] .sheet-no{color:#14181A}
+.sheet-title{
+  font-weight:700;font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-.01em;
+  font-variation-settings:"wdth" 112;text-transform:uppercase;
+}
+.sheet-note{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);margin-inline-start:auto;letter-spacing:.05em}
+@media(max-width:640px){.sheet-note{display:none}}
+
+/* ============================================================
+   HERO — cover sheet with title block
+   ============================================================ */
+.hero{
+  max-width:var(--maxw);margin:0 auto;padding:4.5rem 1.25rem 3rem;
+  display:grid;grid-template-columns:1.6fr 1fr;gap:2.5rem;align-items:start;
+}
+@media(max-width:820px){.hero{grid-template-columns:1fr}}
+.hero-eyebrow{
+  font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:1rem;
+}
+h1{
+  font-weight:800;font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;
+  letter-spacing:-.02em;font-variation-settings:"wdth" 118;
+  text-transform:uppercase;margin-bottom:1.1rem;
+}
+h1 em{font-style:normal;color:var(--blue)}
+.hero-sub{font-size:1.08rem;color:var(--ink-soft);max-width:34rem;margin-bottom:1.6rem}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:.7rem 1.15rem;border:1.5px solid var(--ink);color:var(--ink);
+  background:var(--card);transition:background .15s,color .15s,transform .15s;
+}
+.btn:hover{background:var(--ink);color:var(--paper);text-decoration:none;transform:translateY(-2px)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+html[data-theme="dark"] .btn.primary{color:#14181A}
+.btn.primary:hover{background:var(--blue-deep);border-color:var(--blue-deep)}
+
+.titleblock{border:1.5px solid var(--ink);background:var(--card);font-family:var(--mono);font-size:.74rem}
+.titleblock .tb-photo{border-bottom:1.5px solid var(--ink);aspect-ratio:1/1;overflow:hidden}
+.titleblock .tb-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.titleblock:hover .tb-photo img{transform:scale(1.03)}
+.tb-row{display:grid;grid-template-columns:92px 1fr;border-bottom:1px solid var(--line)}
+.tb-row:last-child{border-bottom:none}
+.tb-row dt{
+  padding:.42rem .55rem;border-inline-end:1px solid var(--line);
+  color:var(--ink-soft);letter-spacing:.05em;font-size:.64rem;text-transform:uppercase;
+}
+.tb-row dd{padding:.42rem .6rem;font-weight:500}
+html[lang="ar"] .titleblock{font-family:'Noto Sans Arabic',var(--mono)}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about-text p{margin-bottom:1rem;max-width:46rem}
+
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:820px){.proj-grid{grid-template-columns:1fr}}
+.proj{
+  border:1.5px solid var(--ink);background:var(--card);
+  display:flex;flex-direction:column;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.proj:hover{transform:translateY(-4px);box-shadow:6px 6px 0 var(--blue)}
+.proj-fig{aspect-ratio:16/9;border-bottom:1.5px solid var(--ink);overflow:hidden}
+.proj-fig img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.proj:hover .proj-fig img{transform:scale(1.05)}
+.proj-body{padding:1.15rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.proj-tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.proj h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em}
+.proj p{font-size:.92rem;color:var(--ink-soft)}
+.proj-tools{margin-top:auto;padding-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{
+  font-family:var(--mono);font-size:.66rem;padding:.18rem .5rem;
+  border:1px solid var(--line);color:var(--ink-soft);background:var(--paper);
+  transition:border-color .15s,color .15s;
+}
+.proj:hover .chip{border-color:var(--blue);color:var(--blue)}
+
+/* ============================================================
+   TIMELINE (Experience / Education)
+   ============================================================ */
+.timeline{border-inline-start:1.5px solid var(--ink);margin-inline-start:.4rem}
+.t-item{position:relative;padding:0 0 2rem 0;padding-inline-start:1.6rem}
+.t-item:last-child{padding-bottom:.2rem}
+.t-item::before{
+  content:"";position:absolute;inset-inline-start:-6.5px;top:.45rem;width:11px;height:11px;
+  background:var(--paper);border:1.5px solid var(--ink);transform:rotate(45deg);
+  transition:background .2s ease;
+}
+.t-item:hover::before{background:var(--blue)}
+.t-date{font-family:var(--mono);font-size:.72rem;color:var(--blue);letter-spacing:.06em}
+.t-item h3{font-size:1.08rem;font-weight:700;margin:.15rem 0 .1rem}
+.t-place{font-size:.86rem;color:var(--ink-soft);font-style:italic;margin-bottom:.45rem}
+.t-item ul{list-style:none;font-size:.92rem;color:var(--ink-soft)}
+.t-item ul li{padding-inline-start:1rem;position:relative;margin-bottom:.3rem}
+.t-item ul li::before{content:"—";position:absolute;inset-inline-start:0;color:var(--blue)}
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.skill-col h3{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue);border-bottom:1.5px solid var(--ink);padding-bottom:.4rem;margin-bottom:.7rem;
+}
+.skill-col ul{list-style:none;font-size:.92rem}
+.skill-col li{padding:.3rem 0;border-bottom:1px dashed var(--line);transition:padding-inline-start .2s ease,color .2s ease}
+.skill-col li:hover{padding-inline-start:.4rem;color:var(--blue)}
+
+/* ============================================================
+   CARDS (certificates, references)
+   ============================================================ */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.card{
+  border:1.5px solid var(--ink);background:var(--card);padding:1.1rem 1.2rem;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:5px 5px 0 var(--blue)}
+.card .proj-tag{display:block;margin-bottom:.35rem}
+.card h3{font-size:1rem;font-weight:700;margin-bottom:.25rem}
+.card p{font-size:.88rem;color:var(--ink-soft)}
+.card a.cert-link{font-family:var(--mono);font-size:.74rem;display:inline-block;margin-top:.5rem}
+
+.plain-list{list-style:none}
+.plain-list li{
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  padding:.7rem 0;border-bottom:1px solid var(--line);font-size:.94rem;
+  transition:padding-inline-start .2s ease;
+}
+.plain-list li:hover{padding-inline-start:.5rem}
+.plain-list li strong{font-weight:600}
+.plain-list li span{font-family:var(--mono);font-size:.74rem;color:var(--ink-soft)}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem}
+.g-item{
+  border:1.5px solid var(--ink);background:var(--card);overflow:hidden;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.g-item:hover{transform:translateY(-3px);box-shadow:5px 5px 0 var(--blue)}
+.g-item img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;border-bottom:1.5px solid var(--ink);
+  transition:transform .45s ease;
+}
+.g-item:hover img{transform:scale(1.06)}
+.g-item figcaption{
+  font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);
+  padding:.55rem .7rem;letter-spacing:.03em;
+}
+html[lang="ar"] .g-item figcaption{font-family:'Noto Sans Arabic',var(--mono)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{border-top:1.5px solid var(--ink);background:var(--card)}
+.footer-inner{
+  max-width:var(--maxw);margin:0 auto;padding:3.5rem 1.25rem 2.5rem;
+  display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;
+}
+@media(max-width:820px){.footer-inner{grid-template-columns:1fr}}
+.footer-inner h2{font-size:1.7rem;font-weight:800;text-transform:uppercase;font-variation-settings:"wdth" 115;margin-bottom:.8rem}
+.contact-lines{font-family:var(--mono);font-size:.85rem;line-height:2}
+.refs h3{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:.7rem;
+}
+.refs .card{margin-bottom:1rem}
+.colophon{border-top:1px solid var(--line)}
+.colophon-inner{
+  max-width:var(--maxw);margin:0 auto;padding:1rem 1.25rem;
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  font-family:var(--mono);font-size:.68rem;color:var(--ink-soft);letter-spacing:.05em;
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#projects" data-i18n="nav_projects">Projects</a>
+      <a href="#experience" data-i18n="nav_experience">Experience</a>
+      <a href="#education" data-i18n="nav_education">Education</a>
+      <a href="#skills" data-i18n="nav_skills">Skills</a>
+      <a href="#certificates" data-i18n="nav_certs">Certificates</a>
+      <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="nav-ctl">
+      <button id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark">◐</button>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="tr">TR</button>
+        <button data-lang="ar">AR</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= COVER SHEET ================= -->
+<header class="hero">
+  <div>
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Civil Engineer · Trabzon, Türkiye</p>
+    <h1 data-i18n="hero_name">Ahmed Mohammed <em>Elhassan</em> Ahmed</h1>
+    <p class="hero-sub" data-i18n="hero_sub">
+      Civil engineering graduate (B.Sc. 2026, Karadeniz Technical University) with broad training
+      across the discipline — structures, geotechnics, transportation, hydraulics, and construction
+      management — hands-on site internship experience, and a passion for building engineering
+      software tools used by fellow engineers.
+    </p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#projects" data-i18n="btn_projects">View projects</a>
+      <a class="btn" href="mailto:a.mohammedcivileng@gmail.com" data-i18n="btn_email">Email me</a>
+      <a class="btn" href="cv.pdf" target="_blank" rel="noopener" data-i18n="btn_cv">CV (PDF)</a>
+    </div>
+  </div>
+
+  <aside class="titleblock" aria-label="Profile summary">
+    <div class="tb-photo">
+      <img src="images/profile.jpg" alt="Formal portrait of Ahmed Mohammed Elhassan Ahmed">
+    </div>
+    <dl>
+      <div class="tb-row"><dt data-i18n="tb_eng_l">Engineer</dt><dd data-i18n="tb_eng_v">Ahmed Mohammed Elhassan Ahmed</dd></div>
+      <div class="tb-row"><dt data-i18n="tb_deg_l">Degree</dt><dd data-i18n="tb_deg_v">B.Sc. Civil Engineering</dd></div>
+      <div class="tb-row"><dt data-i18n="tb_uni_l">University</dt><dd data-i18n="tb_uni_v">Karadeniz Technical University</dd></div>
+      <div class="tb-row"><dt data-i18n="tb_gpa_l">GPA</dt><dd>3.19 / 4.00</dd></div>
+      <div class="tb-row"><dt data-i18n="tb_lng_l">Languages</dt><dd data-i18n="tb_lng_v">Arabic · Turkish · English</dd></div>
+      <div class="tb-row"><dt data-i18n="tb_loc_l">Location</dt><dd data-i18n="tb_loc_v">Trabzon, Türkiye</dd></div>
+      <div class="tb-row"><dt data-i18n="tb_sts_l">Status</dt><dd data-i18n="tb_sts_v">Open to graduate roles</dd></div>
+    </dl>
+  </aside>
+</header>
+
+<!-- ================= S-01 ABOUT ================= -->
+<section class="sheet reveal" id="about">
+  <div class="sheet-head">
+    <span class="sheet-no">S-01</span>
+    <h2 class="sheet-title" data-i18n="s1_t">General Notes</h2>
+    <span class="sheet-note" data-i18n="s1_n">SCALE: N.T.S.</span>
+  </div>
+  <div>
+    <div class="about-text">
+      <p data-i18n="about_p1">
+        I am a civil engineer from Sudan, trained at Karadeniz Technical University in Trabzon,
+        Türkiye. My education covered the full breadth of civil engineering — structural
+        engineering, geotechnics, transportation, hydraulics and water resources, construction
+        materials, surveying, and construction and project management — giving me a well-rounded
+        foundation for any branch of the profession.
+      </p>
+      <p data-i18n="about_p2">
+        My graduation thesis focused on the design of a next-generation sustainable school
+        campus, bringing structural design and sustainable building principles together in one
+        project. Alongside engineering, I build tools for the engineering community — a Telegram
+        bot that delivers lecture notes for every course of the curriculum, and a trilingual
+        grade and GPA calculator used by KTÜ civil engineering students.
+      </p>
+      <p data-i18n="about_p3">
+        I completed an Erasmus+ internship at Universitatea Politehnica din Timișoara, Romania,
+        and a site internship at Fen Mühendislik in Trabzon. I work comfortably in Arabic,
+        Turkish, and English.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= S-02 PROJECTS ================= -->
+<section class="sheet reveal" id="projects">
+  <div class="sheet-head">
+    <span class="sheet-no">S-02</span>
+    <h2 class="sheet-title" data-i18n="s2_t">Projects</h2>
+    <span class="sheet-note" data-i18n="s2_n">SHEET 2 OF 7</span>
+  </div>
+  <div class="proj-grid">
+
+    <article class="proj">
+      <div class="proj-fig">
+        <img src="images/thesis-render.jpg" alt="Aerial render of the sustainable school campus design with rooftop solar panels" loading="lazy">
+      </div>
+      <div class="proj-body">
+        <span class="proj-tag" data-i18n="p1_tag">Graduation Thesis · 2026</span>
+        <h3 data-i18n="p1_t">Next-Generation Sustainable School Campus Design</h3>
+        <p data-i18n="p1_d">
+          Design of a next-generation sustainable vocational school campus for 400 students in
+          Trabzon Değirmendere, combining structural design with sustainability. Structural side:
+          full seismic analysis of a 4-story reinforced concrete building in SAP2000 to the Turkish
+          Building Earthquake Code (TBDY-2018) — modal analysis, equivalent static vs. response
+          spectrum base shear, story drift, and irregularity checks — plus campus modeling in ETABS
+          and ideCAD. Sustainability side: solar PV, rainwater harvesting, passive insulation, and
+          IoT-based monitoring. Completed with three other students under the supervision of
+          Prof. Dr. Metin Hüsem.
+        </p>
+        <div class="proj-tools">
+          <span class="chip">SAP2000</span><span class="chip">ETABS</span>
+          <span class="chip">ideCAD</span><span class="chip">AutoCAD</span>
+          <span class="chip">Revit</span><span class="chip">TBDY-2018</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-fig">
+        <img src="images/insaatbotu.jpg" alt="KTÜ Civil Bot on Telegram and the trilingual KTU Grade Calculator web app" loading="lazy">
+      </div>
+      <div class="proj-body">
+        <span class="proj-tag" data-i18n="p2_tag">Telegram Bot + Web Tool · 440+ Users</span>
+        <h3 data-i18n="p2_t">KTÜ İnşaat Botu (Civil Engineering Bot)</h3>
+        <p data-i18n="p2_d">
+          A Telegram bot serving KTÜ civil engineering students through a full button-based menu:
+          pick a semester, pick a subject, and the bot instantly shares all the lecture notes and
+          study materials for that course. It also links to a companion trilingual (Turkish /
+          English / Arabic) web calculator that computes course grades and GPA, including a
+          reverse-engineered implementation of KTÜ's T-score relative grading algorithm. The bot
+          is complete and actively used by more than 440 students.
+        </p>
+        <div class="proj-tools">
+          <span class="chip">Telegram Bot</span><span class="chip">HTML</span>
+          <span class="chip">CSS</span><span class="chip">JavaScript</span>
+          <span class="chip">UI Design</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= S-03 EXPERIENCE ================= -->
+<section class="sheet reveal" id="experience">
+  <div class="sheet-head">
+    <span class="sheet-no">S-03</span>
+    <h2 class="sheet-title" data-i18n="s3_t">Experience</h2>
+    <span class="sheet-note" data-i18n="s3_n">SHEET 3 OF 7</span>
+  </div>
+  <div class="timeline">
+    <div class="t-item">
+      <span class="t-date">07/2025 – 09/2025</span>
+      <h3 data-i18n="e1_t">Civil Engineering Intern — Universitatea Politehnica din Timișoara (Erasmus+)</h3>
+      <p class="t-place" data-i18n="e1_p">Timișoara, Romania</p>
+      <ul>
+        <li data-i18n="e1_b1">Erasmus+ traineeship in civil engineering at one of Romania's leading technical universities.</li>
+        <li data-i18n="e1_b2">Structural engineering tasks in an international, English-speaking academic environment.</li>
+        <li data-i18n="e1_b3">Collaboration with faculty and international students across engineering disciplines.</li>
+      </ul>
+    </div>
+    <div class="t-item">
+      <span class="t-date">08/2024 – 09/2024</span>
+      <h3 data-i18n="e2_t">Civil Engineering Intern — Fen Mühendislik</h3>
+      <p class="t-place" data-i18n="e2_p">Trabzon, Türkiye</p>
+      <ul>
+        <li data-i18n="e2_b1">Site and office engineering support: quantity surveying and technical documentation.</li>
+        <li data-i18n="e2_b2">CAD drafting and preparation of engineering calculation sheets and reports.</li>
+        <li data-i18n="e2_b3">Field supervision support: checking column reinforcement (rebar) against project drawings and monitoring slab formwork and shoring works.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= S-04 EDUCATION ================= -->
+<section class="sheet reveal" id="education">
+  <div class="sheet-head">
+    <span class="sheet-no">S-04</span>
+    <h2 class="sheet-title" data-i18n="s4_t">Education</h2>
+    <span class="sheet-note" data-i18n="s4_n">SHEET 4 OF 7</span>
+  </div>
+  <div class="timeline">
+    <div class="t-item">
+      <span class="t-date" data-i18n="ed_date">09/2022 – 06/2026 · Graduated</span>
+      <h3 data-i18n="ed_t">B.Sc. Civil Engineering — Karadeniz Technical University</h3>
+      <p class="t-place" data-i18n="ed_p">Trabzon, Türkiye · GPA 3.19 / 4.00</p>
+      <ul>
+        <li data-i18n="ed_b1">Comprehensive civil engineering curriculum: structural engineering, geotechnical engineering, transportation, hydraulics and water resources, construction materials, surveying, occupational health and safety, and construction and project management.</li>
+        <li data-i18n="ed_b2">Thesis: Next-Generation Sustainable School Campus Design — completed with three other students, advised by Prof. Dr. Metin Hüsem.</li>
+        <li data-i18n="ed_b3">Engineering software across courses: SAP2000, ETABS, AutoCAD, and Revit.</li>
+        <li data-i18n="ed_b4">Technical documentation: Excel calculation models, engineering reports, project presentations.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= S-05 SKILLS ================= -->
+<section class="sheet reveal" id="skills">
+  <div class="sheet-head">
+    <span class="sheet-no">S-05</span>
+    <h2 class="sheet-title" data-i18n="s5_t">Skills</h2>
+    <span class="sheet-note" data-i18n="s5_n">SHEET 5 OF 7</span>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-col">
+      <h3 data-i18n="sk1_h">Engineering Software</h3>
+      <ul>
+        <li>SAP2000</li>
+        <li>ETABS</li>
+        <li>AutoCAD</li>
+        <li>Autodesk Revit</li>
+      </ul>
+    </div>
+    <div class="skill-col">
+      <h3 data-i18n="sk2_h">Engineering Practice</h3>
+      <ul>
+        <li data-i18n="sk2_1">Civil engineering</li>
+        <li data-i18n="sk2_2">Quantity surveying</li>
+        <li data-i18n="sk2_3">Visual control &amp; quality inspection</li>
+        <li data-i18n="sk2_4">Technical reporting &amp; documentation</li>
+        <li data-i18n="sk2_5">Project management fundamentals</li>
+      </ul>
+    </div>
+    <div class="skill-col">
+      <h3 data-i18n="sk3_h">Software &amp; Web</h3>
+      <ul>
+        <li>HTML · CSS · JavaScript</li>
+        <li>Microsoft Excel · Word · PowerPoint</li>
+        <li>Adobe Photoshop · Canva</li>
+        <li>Google Drive · Git &amp; GitHub</li>
+      </ul>
+    </div>
+    <div class="skill-col">
+      <h3 data-i18n="sk4_h">Social Skills</h3>
+      <ul>
+        <li data-i18n="sk4_1">Self-development focused</li>
+        <li data-i18n="sk4_2">Solo learner</li>
+        <li data-i18n="sk4_3">Working under stress</li>
+        <li data-i18n="sk4_4">Adaptation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= S-05A LANGUAGES & CERTIFICATES ================= -->
+<section class="sheet reveal" id="certificates">
+  <div class="sheet-head">
+    <span class="sheet-no">S-05A</span>
+    <h2 class="sheet-title" data-i18n="s5a_t">Languages</h2>
+    <span class="sheet-note" data-i18n="s5a_n">VERIFIED DOCUMENTS</span>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <span class="proj-tag" data-i18n="c1_tag">Mother tongue</span>
+      <h3 data-i18n="c1_t">Arabic</h3>
+      <p data-i18n="c1_d">Native speaker.</p>
+    </div>
+    <div class="card">
+      <span class="proj-tag" data-i18n="c2_tag">C1 · Certified</span>
+      <h3 data-i18n="c2_t">Turkish</h3>
+      <p data-i18n="c2_d">Proficient user — certified C1 level.</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1Q5SqGs8-w8Z20e-a2rgL_5OhV2uSG-gE/view?usp=sharing" target="_blank" rel="noopener" data-i18n="c2_l">View C1 certificate ↗</a>
+    </div>
+    <div class="card">
+      <span class="proj-tag">IELTS 6.0</span>
+      <h3 data-i18n="c3_t">English</h3>
+      <p data-i18n="c3_d">IELTS Academic, overall Band 6.0.</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1oCyv1Plkbpmwv0YUrj8KQwZayFWlC2s1/view?usp=sharing" target="_blank" rel="noopener" data-i18n="c3_l">View IELTS certificate ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= S-05B COURSES & CERTIFICATES ================= -->
+<section class="sheet reveal" id="courses">
+  <div class="sheet-head">
+    <span class="sheet-no">S-05B</span>
+    <h2 class="sheet-title" data-i18n="cc_t">Courses &amp; Certificates</h2>
+    <span class="sheet-note" data-i18n="cc_n">11 CERTIFICATES</span>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <span class="proj-tag" data-i18n="cc1_g">Engineering Course</span>
+      <h3>SAP2000</h3>
+      <p data-i18n="cc1_d">Structural analysis and modeling course certificate.</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1xHPoW0FJWmVVt61iJt98m-d_Z3mgl4l-/view?usp=sharing" target="_blank" rel="noopener" data-i18n="view_cert">View certificate ↗</a>
+    </div>
+    <div class="card">
+      <span class="proj-tag" data-i18n="cc2_g">Summit · 2025</span>
+      <h3 data-i18n="cc2_t">Digital Construction Summit</h3>
+      <p data-i18n="cc2_d">Participation certificate — KTÜ, Trabzon.</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1VTLOLuDrlUf6vcItWKbyynR9JZJc30H5/view?usp=sharing" target="_blank" rel="noopener" data-i18n="view_cert2">View certificate ↗</a>
+    </div>
+    <div class="card">
+      <span class="proj-tag" data-i18n="cc3_g">Conference</span>
+      <h3 data-i18n="cc3_t">CESSCON 3 — Civil Engineering Students Conference</h3>
+      <p data-i18n="cc3_d">Participation certificate — CESS, University of Khartoum.</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1hdixCAJdyb1jpUDdSKfppjwvhMyqAK5g/view?usp=sharing" target="_blank" rel="noopener" data-i18n="view_cert3">View certificate ↗</a>
+    </div>
+    <div class="card">
+      <span class="proj-tag">Erasmus+</span>
+      <h3 data-i18n="cc4_t">Erasmus+ Participation Certificate</h3>
+      <p data-i18n="cc4_d">Traineeship participation — Politehnica University of Timișoara, Romania.</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1uTeEtXzwy5--dkV3863zSFfdkwAkggb_/view?usp=sharing" target="_blank" rel="noopener" data-i18n="view_cert4">View certificate ↗</a>
+    </div>
+    <div class="card">
+      <span class="proj-tag" data-i18n="c4_tag">Erasmus+ · 2025</span>
+      <h3 data-i18n="c4_t">Erasmus+ Traineeship</h3>
+      <p data-i18n="c4_d">Attendance certificate — Politehnica University of Timișoara, Romania.</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1I1x5uD0LfBP96_96aGuqcOKKx85qy-hr/view?usp=sharing" target="_blank" rel="noopener" data-i18n="c4_l">View attendance letter ↗</a>
+    </div>
+    <div class="card">
+      <span class="proj-tag">Coursera</span>
+      <h3>Programming with JavaScript</h3>
+      <p data-i18n="cc5_d">Online course certificate — Coursera.</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1yjX2snvkdHYT6W5DcbJ_uioflP_KyT8R/view?usp=sharing" target="_blank" rel="noopener" data-i18n="view_cert5">View certificate ↗</a>
+    </div>
+    <div class="card">
+      <span class="proj-tag">Coursera</span>
+      <h3>HTML and CSS in Depth</h3>
+      <p data-i18n="cc6_d">Online course certificate — Coursera.</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1F54ZeE6nIZtRXTOwJ60ByrcROzV7Aoo3/view?usp=sharing" target="_blank" rel="noopener" data-i18n="view_cert6">View certificate ↗</a>
+    </div>
+    <div class="card">
+      <span class="proj-tag">Coursera</span>
+      <h3 data-i18n="cc7_t">Version Control (Git &amp; GitHub)</h3>
+      <p data-i18n="cc7_d">Online course certificate — Coursera.</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/10mmOwP87NHLJB_J-KwvJYHQ6skOsCnts/view?usp=sharing" target="_blank" rel="noopener" data-i18n="view_cert7">View certificate ↗</a>
+    </div>
+    <div class="card">
+      <span class="proj-tag">SoloLearn</span>
+      <h3 data-i18n="cc8_t">Python Programming</h3>
+      <p data-i18n="cc8_d">Python course certificate — SoloLearn.</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1mBOfBYJX0QSmYLOj9yrSTgcnZMkHEYSC/view?usp=sharing" target="_blank" rel="noopener" data-i18n="view_cert8">View certificate ↗</a>
+    </div>
+    <div class="card">
+      <span class="proj-tag">Udemy</span>
+      <h3 data-i18n="cc9_t">Microsoft Excel</h3>
+      <p data-i18n="cc9_d">Excel course certificate — Udemy.</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1iG0rq4CmULfGn0N6Rvrh__eyEbHt2AB_/view?usp=sharing" target="_blank" rel="noopener" data-i18n="view_cert9">View certificate ↗</a>
+    </div>
+    <div class="card">
+      <span class="proj-tag" data-i18n="cc10_g">Volunteering</span>
+      <h3 data-i18n="cc10_t">Turkish Green Crescent (Yeşilay)</h3>
+      <p data-i18n="cc10_d">Certificate from the Turkish Green Crescent (Yeşilay).</p>
+      <a class="cert-link" href="https://drive.google.com/file/d/1I6TrnQYbUx0y-6SgCQoKLdRIuUXjL5zs/view?usp=sharing" target="_blank" rel="noopener" data-i18n="view_cert10">View certificate ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= S-06 ACTIVITY ================= -->
+<section class="sheet reveal" id="activity">
+  <div class="sheet-head">
+    <span class="sheet-no">S-06</span>
+    <h2 class="sheet-title" data-i18n="s6_t">Conferences &amp; Volunteering</h2>
+    <span class="sheet-note" data-i18n="s6_n">SHEET 6 OF 7</span>
+  </div>
+  <ul class="plain-list">
+    <li><strong data-i18n="a1">4th International Civil Engineering and Architecture Conference</strong><span data-i18n="a1_d">05/2025 · Trabzon</span></li>
+    <li><strong data-i18n="a2">Digital Construction Summit</strong><span data-i18n="a2_d">02/2025 · Trabzon</span></li>
+    <li><strong data-i18n="a3">Management Team Member — GENÇ İMO (Young Members Committee, Chamber of Civil Engineers), KTÜ</strong><span>01/2022 – 11/2024</span></li>
+    <li><strong data-i18n="a4">Media Officer — Sudanese Students' Union in Trabzon</strong><span>11/2023 – 06/2024</span></li>
+    <li><strong data-i18n="a5">Volunteer — Turkish Red Crescent</strong><span>02/2022 – 08/2022</span></li>
+    <li><strong data-i18n="a6">Volunteer — Civil Engineering Students Association (CESS), University of Khartoum</strong><span>2021</span></li>
+  </ul>
+</section>
+
+<!-- ================= S-07 GALLERY ================= -->
+<section class="sheet reveal" id="gallery">
+  <div class="sheet-head">
+    <span class="sheet-no">S-07</span>
+    <h2 class="sheet-title" data-i18n="s7_t">Events &amp; Activities</h2>
+    <span class="sheet-note" data-i18n="s7_n">PHOTO RECORD</span>
+  </div>
+  <div class="gallery-grid">
+    <figure class="g-item">
+      <img src="images/events/event-01.jpg" alt="GENÇ İMO student members in hardhats at a Chamber of Civil Engineers event" loading="lazy">
+      <figcaption data-i18n="g1">GENÇ İMO members' gathering — Chamber of Civil Engineers (İMO), Trabzon Branch</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-02.jpg" alt="GENÇ İMO Trabzon promotion stand with visiting officials" loading="lazy">
+      <figcaption data-i18n="g2">GENÇ İMO Trabzon promotion stand — Union of Chambers of Turkish Engineers and Architects (TMMOB)</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-03.jpg" alt="Ahmed at the 68th founding anniversary ceremony of the Chamber of Civil Engineers, Trabzon Branch" loading="lazy">
+      <figcaption data-i18n="g3">68th Founding Anniversary — Chamber of Civil Engineers, Trabzon Branch</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-04.jpg" alt="Four KTÜ GENÇ İMO members holding a banner on a mountain hike" loading="lazy">
+      <figcaption data-i18n="g4">KTÜ GENÇ İMO outdoor activity — team hike in the Trabzon highlands</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-05.jpg" alt="Student membership card of the Chamber of Civil Engineers" loading="lazy">
+      <figcaption data-i18n="g5">Student membership — Chamber of Civil Engineers (TMMOB İMO), Member No. 340221</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-06.jpg" alt="Ahmed with three teammates standing on stone steps" loading="lazy">
+      <figcaption data-i18n="g6">With the GENÇ İMO management team — Trabzon</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-07.jpg" alt="Ahmed wearing a Turkish Red Crescent Youth volunteer vest at a museum exhibition" loading="lazy">
+      <figcaption data-i18n="g7">Turkish Red Crescent Youth volunteer ("Gönüllü" = Volunteer) — museum exhibition visit</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-08.jpg" alt="Ahmed in a Red Crescent volunteer vest shaking hands with a decorated veteran" loading="lazy">
+      <figcaption data-i18n="g8">Meeting war veterans at a Turkish Red Crescent commemoration event</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-09.jpg" alt="Group of Turkish Red Crescent volunteers standing on a school stage" loading="lazy">
+      <figcaption data-i18n="g9">With fellow Turkish Red Crescent volunteers — community school event</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-24.jpg" alt="Ahmed in traditional Sudanese dress speaking at a KTÜ podium with the Sudanese flag and the Meroë pyramids on screen" loading="lazy">
+      <figcaption data-i18n="g23">Presenting Sudanese culture in traditional dress — Sudanese Students' Union event, KTÜ</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-23.jpg" alt="Sudanese students in traditional dress on stage with local officials at a cultural event in Trabzon" loading="lazy">
+      <figcaption data-i18n="g24">Sudanese cultural event with local officials — Ministry of Youth and Sports (GSB) dormitories, Trabzon</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-18.jpg" alt="Ahmed checking the reinforcement cage of a concrete column on site" loading="lazy">
+      <figcaption data-i18n="g10">Checking column reinforcement (rebar cage) — site internship at Fen Mühendislik (Fen Engineering), Trabzon</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-16.jpg" alt="Ahmed crouching on slab formwork and shoring with the Black Sea in the background" loading="lazy">
+      <figcaption data-i18n="g11">On slab formwork and shoring, overlooking the Black Sea — Fen Engineering site, Trabzon</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-15.jpg" alt="Ahmed with the site engineering team on a reinforced concrete slab" loading="lazy">
+      <figcaption data-i18n="g12">With the site team on a reinforced concrete slab — Fen Engineering internship</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-17.jpg" alt="Ahmed with a site colleague, column reinforcement cages in the background" loading="lazy">
+      <figcaption data-i18n="g13">With a site colleague — column reinforcement cages in the background, Fen Engineering</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-21.jpg" alt="Collage from the Digital Construction Summit 2025: backdrop, venue, participant badge, and main stage" loading="lazy">
+      <figcaption data-i18n="g14">Digital Construction Summit 2025 ("Dijital İnşaat Zirvesi") — participant, KTÜ, Trabzon, February 2025</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-22.jpg" alt="Ahmed at the 4th International Civil Engineering and Architecture Conference backdrop" loading="lazy">
+      <figcaption data-i18n="g15">4th International Civil Engineering and Architecture Conference (ICEARC'25) — Trabzon, May 2025</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-14.jpg" alt="Ahmed and two colleagues in hardhats and hi-vis vests on a precast concrete construction site" loading="lazy">
+      <figcaption data-i18n="g16">On site — precast reinforced concrete structure, Erasmus+ internship, Romania</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-11.jpg" alt="Student card of Politehnica University of Timișoara held up in the campus atrium" loading="lazy">
+      <figcaption data-i18n="g17">Politehnica University of Timișoara — Faculty of Civil Engineering, Erasmus+ traineeship</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-10.jpg" alt="Erasmus+ program sticker reading Changing lives, opening minds" loading="lazy">
+      <figcaption data-i18n="g18">Erasmus+ mobility program — "Changing lives, opening minds"</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-13.jpg" alt="International students posing after an indoor football match" loading="lazy">
+      <figcaption data-i18n="g19">Football with international students — Erasmus+, Timișoara</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-12.jpg" alt="Ahmed with international friends sitting on a stone wall in a park" loading="lazy">
+      <figcaption data-i18n="g20">With international friends — Erasmus+ life in Timișoara, Romania</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-20.jpg" alt="Ahmed in graduation gown holding his diploma at the KTÜ civil engineering department" loading="lazy">
+      <figcaption data-i18n="g21">Graduation day — B.Sc. Civil Engineering, Karadeniz Technical University, June 2026</figcaption>
+    </figure>
+    <figure class="g-item">
+      <img src="images/events/event-19.jpg" alt="Ahmed holding the Sudanese flag with the Ambassador of Sudan to Türkiye at the Türkiye Scholarships graduation ceremony" loading="lazy">
+      <figcaption data-i18n="g22">With the Ambassador of Sudan to Türkiye — 15th International Students Graduation Ceremony (Türkiye Scholarships / YTB), June 2026</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div>
+      <h2 data-i18n="f_t">Let's Build Something</h2>
+      <p style="color:var(--ink-soft);max-width:32rem;margin-bottom:1.2rem" data-i18n="f_s">
+        Open to graduate civil and structural engineering roles, and to collaboration on
+        engineering software and research.
+      </p>
+      <div class="contact-lines">
+        ✉ <a href="mailto:a.mohammedcivileng@gmail.com">a.mohammedcivileng@gmail.com</a><br>
+        ☎ <a href="tel:+905319749136">+90 531 974 9136</a><br>
+        ⌖ <span data-i18n="f_loc">Trabzon, Türkiye</span><br>
+        in <a href="https://www.linkedin.com/in/ahmed-mohammed-elhassan-b08ab0244/" target="_blank" rel="noopener">linkedin.com/in/ahmed-mohammed-elhassan</a>
+      </div>
+    </div>
+    <div class="refs">
+      <h3 data-i18n="f_r">References</h3>
+      <div class="card">
+        <h3 data-i18n="r1_t">Prof. Dr. Volkan Kahya</h3>
+        <p><span data-i18n="r1_d">Karadeniz Technical University, Civil Engineering</span><br>
+        <a href="mailto:volkan@ktu.edu.tr">volkan@ktu.edu.tr</a> · +90 462 377 2631</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="r2_t">Prof. Dr. Şevket Ateş</h3>
+        <p><span data-i18n="r2_d">Karadeniz Technical University, Civil Engineering</span><br>
+        <a href="mailto:sates@ktu.edu.tr">sates@ktu.edu.tr</a> · +90 462 377 2606</p>
+      </div>
+    </div>
+  </div>
+  <div class="colophon">
+    <div class="colophon-inner">
+      <span data-i18n="col_l">AHMED MOHAMMED ELHASSAN AHMED — CIVIL ENGINEER</span>
+      <span data-i18n="col_r">DRAWN: 2026 · REV. A</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   TRANSLATIONS — English is the default (read from the DOM);
+   Turkish and Arabic dictionaries below.
+   ============================================================ */
+const I18N = {
+tr: {
+  nav_about:"Hakkımda", nav_projects:"Projeler", nav_experience:"Deneyim", nav_education:"Eğitim",
+  nav_skills:"Beceriler", nav_certs:"Sertifikalar", nav_gallery:"Galeri", nav_contact:"İletişim",
+  hero_eyebrow:"İnşaat Mühendisi · Trabzon, Türkiye",
+  hero_name:"Ahmed Mohammed <em>Elhassan</em> Ahmed",
+  hero_sub:"Karadeniz Teknik Üniversitesi 2026 mezunu inşaat mühendisi. Yapı, geoteknik, ulaştırma, hidrolik ve yapım yönetimini kapsayan geniş bir mühendislik eğitimi, şantiye staj deneyimi ve mühendisler için yazılım araçları geliştirme tutkusu.",
+  btn_projects:"Projeleri gör", btn_email:"E-posta gönder", btn_cv:"CV (PDF)",
+  tb_eng_l:"Mühendis", tb_eng_v:"Ahmed Mohammed Elhassan Ahmed",
+  tb_deg_l:"Derece", tb_deg_v:"İnşaat Mühendisliği Lisansı",
+  tb_uni_l:"Üniversite", tb_uni_v:"Karadeniz Teknik Üniversitesi",
+  tb_gpa_l:"GNO", tb_lng_l:"Diller", tb_lng_v:"Arapça · Türkçe · İngilizce",
+  tb_loc_l:"Konum", tb_loc_v:"Trabzon, Türkiye",
+  tb_sts_l:"Durum", tb_sts_v:"Yeni mezun pozisyonlarına açık",
+  s1_t:"Genel Notlar", s1_n:"ÖLÇEK: ÖLÇEKSİZ",
+  about_p1:"Sudanlı bir inşaat mühendisiyim; eğitimimi Trabzon'daki Karadeniz Teknik Üniversitesi'nde tamamladım. Eğitimim inşaat mühendisliğinin tüm alanlarını kapsadı — yapı mühendisliği, geoteknik, ulaştırma, hidrolik ve su kaynakları, yapı malzemeleri, ölçme bilgisi ile yapım ve proje yönetimi — ve mesleğin her dalı için sağlam bir temel kazandırdı.",
+  about_p2:"Bitirme tezim, yapısal tasarım ile sürdürülebilir bina ilkelerini tek projede birleştiren yeni nesil sürdürülebilir bir okul kampüsü tasarımına odaklandı. Mühendisliğin yanı sıra mühendislik topluluğu için araçlar geliştiriyorum: müfredattaki her dersin notlarını ulaştıran bir Telegram botu ve KTÜ inşaat mühendisliği öğrencilerinin kullandığı üç dilli bir not ve GNO hesaplayıcısı.",
+  about_p3:"Romanya'daki Universitatea Politehnica din Timișoara'da Erasmus+ stajı ve Trabzon'daki Fen Mühendislik'te şantiye stajı tamamladım. Arapça, Türkçe ve İngilizce dillerinde rahatça çalışırım.",
+  s2_t:"Projeler", s2_n:"PAFTA 2 / 7",
+  p1_tag:"Bitirme Tezi · 2026",
+  p1_t:"Yeni Nesil Sürdürülebilir Okul Kampüsü Tasarımı",
+  p1_d:"Trabzon Değirmendere'de 400 öğrenci kapasiteli meslek lisesi için yapısal tasarım ile sürdürülebilirliği birleştiren yeni nesil sürdürülebilir kampüs tasarımı. Yapısal taraf: 4 katlı betonarme binanın SAP2000 ile TBDY-2018'e göre tam deprem analizi — modal analiz, eşdeğer statik ve mod birleştirme taban kesme kuvveti karşılaştırması, kat ötelemeleri ve düzensizlik kontrolleri — ayrıca ETABS ve ideCAD ile kampüs modellemesi. Sürdürülebilirlik tarafı: güneş enerjisi (PV), yağmur suyu hasadı, pasif yalıtım ve IoT tabanlı izleme. Prof. Dr. Metin Hüsem danışmanlığında üç öğrenci arkadaşımla birlikte tamamlandı.",
+  p2_tag:"Telegram Botu + Web Aracı · 440+ Kullanıcı",
+  p2_t:"KTÜ İnşaat Botu",
+  p2_d:"KTÜ inşaat mühendisliği öğrencilerine tam buton tabanlı bir menüyle hizmet veren Telegram botu: dönemi seç, dersi seç; bot o derse ait tüm ders notlarını ve çalışma materyallerini anında paylaşır. Ayrıca ders notu ve GNO hesaplayan üç dilli (Türkçe / İngilizce / Arapça) bir web hesaplayıcısına bağlanır; KTÜ'nün T-skoru bağıl değerlendirme algoritmasının tersine mühendislikle geliştirilmiş bir uygulamasını içerir. Bot tamamlanmıştır ve 440'tan fazla öğrenci tarafından aktif olarak kullanılmaktadır.",
+  s3_t:"Deneyim", s3_n:"PAFTA 3 / 7",
+  e1_t:"İnşaat Mühendisliği Stajyeri — Universitatea Politehnica din Timișoara (Erasmus+)",
+  e1_p:"Timișoara, Romanya",
+  e1_b1:"Romanya'nın önde gelen teknik üniversitelerinden birinde inşaat mühendisliği alanında Erasmus+ stajı.",
+  e1_b2:"Uluslararası, İngilizce konuşulan akademik bir ortamda yapı mühendisliği görevleri.",
+  e1_b3:"Farklı mühendislik disiplinlerinden akademisyenler ve uluslararası öğrencilerle iş birliği.",
+  e2_t:"İnşaat Mühendisliği Stajyeri — Fen Mühendislik",
+  e2_p:"Trabzon, Türkiye",
+  e2_b1:"Şantiye ve ofis mühendisliği desteği: metraj ve teknik dokümantasyon.",
+  e2_b2:"CAD çizimi ile mühendislik hesap çizelgeleri ve raporlarının hazırlanması.",
+  e2_b3:"Saha kontrol desteği: kolon donatısının proje çizimlerine göre kontrolü ile döşeme kalıp ve iskele işlerinin takibi.",
+  s4_t:"Eğitim", s4_n:"PAFTA 4 / 7",
+  ed_date:"09/2022 – 06/2026 · Mezun",
+  ed_t:"İnşaat Mühendisliği Lisansı — Karadeniz Teknik Üniversitesi",
+  ed_p:"Trabzon, Türkiye · GNO 3.19 / 4.00",
+  ed_b1:"Kapsamlı inşaat mühendisliği müfredatı: yapı mühendisliği, geoteknik, ulaştırma, hidrolik ve su kaynakları, yapı malzemeleri, ölçme bilgisi, iş sağlığı ve güvenliği ile yapım ve proje yönetimi.",
+  ed_b2:"Tez: Yeni Nesil Sürdürülebilir Okul Kampüsü Tasarımı — Prof. Dr. Metin Hüsem danışmanlığında üç öğrenci arkadaşımla birlikte tamamlandı.",
+  ed_b3:"Derslerde kullanılan mühendislik yazılımları: SAP2000, ETABS, AutoCAD ve Revit.",
+  ed_b4:"Teknik dokümantasyon: Excel hesap modelleri, mühendislik raporları, proje sunumları.",
+  s5_t:"Beceriler", s5_n:"PAFTA 5 / 7",
+  sk1_h:"Mühendislik Yazılımları", sk2_h:"Mühendislik Uygulaması",
+  sk2_1:"İnşaat mühendisliği", sk2_2:"Metraj", sk2_3:"Görsel kontrol ve kalite denetimi",
+  sk2_4:"Teknik raporlama ve dokümantasyon", sk2_5:"Proje yönetimi temelleri",
+  sk3_h:"Yazılım ve Web", sk4_h:"Sosyal Beceriler",
+  sk4_1:"Kişisel gelişim odaklı", sk4_2:"Kendi kendine öğrenen", sk4_3:"Stres altında çalışma", sk4_4:"Uyum yeteneği",
+  s5a_t:"Diller", s5a_n:"DOĞRULANMIŞ BELGELER",
+  c1_tag:"Ana dil", c1_t:"Arapça", c1_d:"Ana dil düzeyinde.",
+  c2_tag:"C1 · Sertifikalı", c2_t:"Türkçe", c2_d:"Yetkin kullanıcı — C1 düzeyi sertifikalı.", c2_l:"C1 sertifikasını görüntüle ↗",
+  c3_t:"İngilizce", c3_d:"IELTS Academic, genel Band 6.0.", c3_l:"IELTS sertifikasını görüntüle ↗",
+  c4_tag:"Erasmus+ · 2025", c4_t:"Erasmus+ Stajı",
+  c4_d:"Katılım belgesi — Politehnica Timișoara Üniversitesi, Romanya.", c4_l:"Katılım belgesini görüntüle ↗",
+  cc_t:"Kurslar ve Sertifikalar", cc_n:"11 SERTİFİKA",
+  cc1_g:"Mühendislik Kursu", cc1_d:"Yapısal analiz ve modelleme kursu sertifikası.",
+  cc2_g:"Zirve · 2025", cc2_t:"Dijital İnşaat Zirvesi", cc2_d:"Katılım sertifikası — KTÜ, Trabzon.",
+  cc3_g:"Konferans", cc3_t:"CESSCON 3 — İnşaat Mühendisliği Öğrenci Konferansı", cc3_d:"Katılım sertifikası — CESS, Hartum Üniversitesi.",
+  cc4_t:"Erasmus+ Katılım Sertifikası", cc4_d:"Staj katılımı — Politehnica Timișoara Üniversitesi, Romanya.",
+  cc5_d:"Çevrim içi kurs sertifikası — Coursera.",
+  cc6_d:"Çevrim içi kurs sertifikası — Coursera.",
+  cc7_t:"Versiyon Kontrolü (Git ve GitHub)", cc7_d:"Çevrim içi kurs sertifikası — Coursera.",
+  cc8_t:"Python Programlama", cc8_d:"Python kursu sertifikası — SoloLearn.",
+  cc9_t:"Microsoft Excel", cc9_d:"Excel kursu sertifikası — Udemy.",
+  cc10_g:"Gönüllülük", cc10_t:"Türkiye Yeşilay Cemiyeti", cc10_d:"Yeşilay tarafından verilen sertifika.",
+  view_cert:"Sertifikayı görüntüle ↗", view_cert2:"Sertifikayı görüntüle ↗", view_cert3:"Sertifikayı görüntüle ↗",
+  view_cert4:"Sertifikayı görüntüle ↗", view_cert5:"Sertifikayı görüntüle ↗", view_cert6:"Sertifikayı görüntüle ↗",
+  view_cert7:"Sertifikayı görüntüle ↗", view_cert8:"Sertifikayı görüntüle ↗", view_cert9:"Sertifikayı görüntüle ↗",
+  view_cert10:"Sertifikayı görüntüle ↗",
+  s6_t:"Konferanslar ve Gönüllülük", s6_n:"PAFTA 6 / 7",
+  a1:"4. Uluslararası İnşaat Mühendisliği ve Mimarlık Konferansı", a1_d:"05/2025 · Trabzon",
+  a2:"Dijital İnşaat Zirvesi", a2_d:"02/2025 · Trabzon",
+  a3:"Yönetim Ekibi Üyesi — GENÇ İMO (İnşaat Mühendisleri Odası Genç Üyeler Komitesi), KTÜ",
+  a4:"Medya Sorumlusu — Trabzon Sudanlı Öğrenciler Birliği",
+  a5:"Gönüllü — Türk Kızılay",
+  a6:"Gönüllü — İnşaat Mühendisliği Öğrenci Topluluğu (CESS), Hartum Üniversitesi",
+  s7_t:"Etkinlikler ve Faaliyetler", s7_n:"FOTOĞRAF KAYDI",
+  g1:"GENÇ İMO üyeleri buluşması — İnşaat Mühendisleri Odası (İMO), Trabzon Şubesi",
+  g2:"GENÇ İMO Trabzon tanıtım standı — TMMOB",
+  g3:"68. Kuruluş Yıldönümü — İnşaat Mühendisleri Odası, Trabzon Şubesi",
+  g4:"KTÜ GENÇ İMO doğa etkinliği — Trabzon yaylalarında ekip yürüyüşü",
+  g5:"Öğrenci üyeliği — İnşaat Mühendisleri Odası (TMMOB İMO), Üye No. 340221",
+  g6:"GENÇ İMO yönetim ekibiyle — Trabzon",
+  g7:"Türk Kızılay Genç gönüllüsü — müze sergisi ziyareti",
+  g8:"Türk Kızılay anma etkinliğinde gazilerle buluşma",
+  g9:"Türk Kızılay gönüllüsü arkadaşlarla — okul etkinliği",
+  g23:"Geleneksel kıyafetle Sudan kültürünün tanıtımı — Trabzon Sudanlı Öğrenciler Birliği etkinliği, KTÜ",
+  g24:"Yerel yetkililerle Sudan kültür etkinliği — Gençlik ve Spor Bakanlığı (GSB) yurtları, Trabzon",
+  g10:"Kolon donatısı (donatı kafesi) kontrolü — Fen Mühendislik şantiye stajı, Trabzon",
+  g11:"Döşeme kalıbı ve iskele üzerinde, Karadeniz manzarasıyla — Fen Mühendislik şantiyesi, Trabzon",
+  g12:"Betonarme döşeme üzerinde şantiye ekibiyle — Fen Mühendislik stajı",
+  g13:"Şantiye arkadaşıyla — arka planda kolon donatı kafesleri, Fen Mühendislik",
+  g14:"Dijital İnşaat Zirvesi 2025 — katılımcı, KTÜ, Trabzon, Şubat 2025",
+  g15:"4. Uluslararası İnşaat Mühendisliği ve Mimarlık Konferansı (ICEARC'25) — Trabzon, Mayıs 2025",
+  g16:"Şantiyede — prekast betonarme yapı, Erasmus+ stajı, Romanya",
+  g17:"Politehnica Timișoara Üniversitesi — İnşaat Fakültesi, Erasmus+ stajı",
+  g18:"Erasmus+ hareketlilik programı — \"Changing lives, opening minds\"",
+  g19:"Uluslararası öğrencilerle futbol — Erasmus+, Timișoara",
+  g20:"Uluslararası arkadaşlarla — Erasmus+ hayatı, Timișoara, Romanya",
+  g21:"Mezuniyet günü — İnşaat Mühendisliği Lisansı, Karadeniz Teknik Üniversitesi, Haziran 2026",
+  g22:"Sudan'ın Türkiye Büyükelçisi ile — 15. Uluslararası Öğrenciler Mezuniyet Töreni (Türkiye Bursları / YTB), Haziran 2026",
+  f_t:"Birlikte İnşa Edelim",
+  f_s:"Yeni mezun inşaat ve yapı mühendisliği pozisyonlarına, ayrıca mühendislik yazılımı ve araştırma iş birliklerine açığım.",
+  f_loc:"Trabzon, Türkiye",
+  f_r:"Referanslar",
+  r1_t:"Prof. Dr. Volkan Kahya", r1_d:"Karadeniz Teknik Üniversitesi, İnşaat Mühendisliği",
+  r2_t:"Prof. Dr. Şevket Ateş", r2_d:"Karadeniz Teknik Üniversitesi, İnşaat Mühendisliği",
+  col_l:"AHMED MOHAMMED ELHASSAN AHMED — İNŞAAT MÜHENDİSİ",
+  col_r:"ÇİZİM: 2026 · REV. A"
+},
+ar: {
+  nav_about:"نبذة عني", nav_projects:"المشاريع", nav_experience:"الخبرة", nav_education:"التعليم",
+  nav_skills:"المهارات", nav_certs:"الشهادات", nav_gallery:"المعرض", nav_contact:"التواصل",
+  hero_eyebrow:"مهندس مدني · طرابزون، تركيا",
+  hero_name:"أحمد محمد <em>الحسن</em> أحمد",
+  hero_sub:"مهندس مدني خريج جامعة كارادينيز التقنية (بكالوريوس 2026)، بتكوين شامل في تخصصات الهندسة المدنية — الإنشاءات والجيوتقنية والنقل والهيدروليكا وإدارة التشييد — مع خبرة تدريب ميداني في المواقع وشغف ببناء أدوات برمجية هندسية يستخدمها زملاؤه المهندسون.",
+  btn_projects:"عرض المشاريع", btn_email:"راسلني", btn_cv:"السيرة الذاتية (PDF)",
+  tb_eng_l:"المهندس", tb_eng_v:"أحمد محمد الحسن أحمد",
+  tb_deg_l:"الدرجة", tb_deg_v:"بكالوريوس هندسة مدنية",
+  tb_uni_l:"الجامعة", tb_uni_v:"جامعة كارادينيز التقنية",
+  tb_gpa_l:"المعدل", tb_lng_l:"اللغات", tb_lng_v:"العربية · التركية · الإنجليزية",
+  tb_loc_l:"الموقع", tb_loc_v:"طرابزون، تركيا",
+  tb_sts_l:"الحالة", tb_sts_v:"متاح لوظائف حديثي التخرج",
+  s1_t:"ملاحظات عامة", s1_n:"المقياس: بدون مقياس",
+  about_p1:"أنا مهندس مدني من السودان، تلقّيت تعليمي في جامعة كارادينيز التقنية بمدينة طرابزون في تركيا. غطّى تعليمي كامل مجالات الهندسة المدنية — هندسة الإنشاءات، والجيوتقنية، والنقل، والهيدروليكا والموارد المائية، ومواد البناء، والمساحة، وإدارة التشييد والمشاريع — مما منحني أساسًا متكاملًا لأي فرع من فروع المهنة.",
+  about_p2:"ركّزت أطروحة تخرجي على تصميم حرم مدرسي مستدام من الجيل الجديد، يجمع بين التصميم الإنشائي ومبادئ البناء المستدام في مشروع واحد. وإلى جانب الهندسة، أطوّر أدوات لخدمة المجتمع الهندسي: بوت تيليغرام يوفّر محاضرات كل مقررات المنهج، وحاسبة درجات ومعدل تراكمي ثلاثية اللغات يستخدمها طلاب الهندسة المدنية في الجامعة.",
+  about_p3:"أكملت تدريب إيراسموس+ في جامعة بوليتهنيكا تيميشوارا في رومانيا، وتدريبًا ميدانيًا في شركة فن مهندسلك (Fen Mühendislik) في طرابزون. أعمل بطلاقة بالعربية والتركية والإنجليزية.",
+  s2_t:"المشاريع", s2_n:"لوحة 2 من 7",
+  p1_tag:"أطروحة التخرج · 2026",
+  p1_t:"تصميم حرم مدرسي مستدام من الجيل الجديد",
+  p1_d:"تصميم حرم مدرسة مهنية مستدامة تتسع لـ400 طالب في منطقة دغيرمندره بطرابزون، يجمع بين التصميم الإنشائي والاستدامة. الجانب الإنشائي: تحليل زلزالي كامل لمبنى خرساني مسلح من أربعة طوابق باستخدام SAP2000 وفق كود الزلازل التركي (TBDY-2018) — تحليل الأنماط، ومقارنة قوى القص القاعدية بين الطريقة الاستاتيكية المكافئة وطيف الاستجابة، وانحرافات الطوابق، وفحوص الانتظام — إضافة إلى نمذجة الحرم في ETABS وideCAD. جانب الاستدامة: الطاقة الشمسية، وحصاد مياه الأمطار، والعزل السلبي، والمراقبة بإنترنت الأشياء. أُنجز المشروع مع ثلاثة طلاب آخرين بإشراف الأستاذ الدكتور متين حوسيم.",
+  p2_tag:"بوت تيليغرام + أداة ويب · 440+ مستخدم",
+  p2_t:"بوت الهندسة المدنية KTÜ İnşaat Botu",
+  p2_d:"بوت تيليغرام يخدم طلاب الهندسة المدنية في جامعة كارادينيز التقنية عبر قائمة أزرار كاملة: اختر الفصل الدراسي، ثم اختر المادة، فيرسل البوت فورًا جميع المحاضرات والمواد الدراسية لذلك المقرر. كما يرتبط بحاسبة ويب ثلاثية اللغات (تركية / إنجليزية / عربية) لحساب درجات المواد والمعدل التراكمي، وتتضمن تطبيقًا مُعاد بناؤه هندسيًا لخوارزمية التقييم النسبي (T-Score) الخاصة بالجامعة. البوت مكتمل ويستخدمه فعليًا أكثر من 440 طالبًا.",
+  s3_t:"الخبرة", s3_n:"لوحة 3 من 7",
+  e1_t:"متدرب هندسة مدنية — جامعة بوليتهنيكا تيميشوارا (إيراسموس+)",
+  e1_p:"تيميشوارا، رومانيا",
+  e1_b1:"تدريب إيراسموس+ في الهندسة المدنية بإحدى أبرز الجامعات التقنية في رومانيا.",
+  e1_b2:"مهام في هندسة الإنشاءات ضمن بيئة أكاديمية دولية ناطقة بالإنجليزية.",
+  e1_b3:"التعاون مع أعضاء هيئة التدريس وطلاب دوليين من مختلف التخصصات الهندسية.",
+  e2_t:"متدرب هندسة مدنية — شركة فن مهندسلك (Fen Mühendislik)",
+  e2_p:"طرابزون، تركيا",
+  e2_b1:"دعم أعمال الهندسة في الموقع والمكتب: حساب الكميات والتوثيق الفني.",
+  e2_b2:"الرسم بالحاسوب (CAD) وإعداد جداول الحسابات والتقارير الهندسية.",
+  e2_b3:"دعم الإشراف الميداني: فحص حديد تسليح الأعمدة ومطابقته لمخططات المشروع، ومتابعة أعمال قوالب البلاطات والسقالات.",
+  s4_t:"التعليم", s4_n:"لوحة 4 من 7",
+  ed_date:"09/2022 – 06/2026 · متخرج",
+  ed_t:"بكالوريوس الهندسة المدنية — جامعة كارادينيز التقنية",
+  ed_p:"طرابزون، تركيا · المعدل 3.19 / 4.00",
+  ed_b1:"منهج شامل في الهندسة المدنية: هندسة الإنشاءات، والهندسة الجيوتقنية، والنقل، والهيدروليكا والموارد المائية، ومواد البناء، والمساحة، والصحة والسلامة المهنية، وإدارة التشييد والمشاريع.",
+  ed_b2:"الأطروحة: تصميم حرم مدرسي مستدام من الجيل الجديد — أُنجزت مع ثلاثة طلاب آخرين بإشراف الأستاذ الدكتور متين حوسيم.",
+  ed_b3:"برمجيات هندسية عبر المقررات: SAP2000 وETABS وAutoCAD وRevit.",
+  ed_b4:"التوثيق الفني: نماذج حسابية في Excel، وتقارير هندسية، وعروض تقديمية للمشاريع.",
+  s5_t:"المهارات", s5_n:"لوحة 5 من 7",
+  sk1_h:"البرمجيات الهندسية", sk2_h:"الممارسة الهندسية",
+  sk2_1:"الهندسة المدنية", sk2_2:"حساب الكميات", sk2_3:"الفحص البصري ومراقبة الجودة",
+  sk2_4:"التقارير والتوثيق الفني", sk2_5:"أساسيات إدارة المشاريع",
+  sk3_h:"البرمجيات والويب", sk4_h:"المهارات الاجتماعية",
+  sk4_1:"التركيز على التطوير الذاتي", sk4_2:"التعلّم الذاتي", sk4_3:"العمل تحت الضغط", sk4_4:"سرعة التكيّف",
+  s5a_t:"اللغات", s5a_n:"وثائق موثّقة",
+  c1_tag:"اللغة الأم", c1_t:"العربية", c1_d:"متحدث أصلي.",
+  c2_tag:"C1 · معتمدة", c2_t:"التركية", c2_d:"مستخدم متمكّن — مستوى C1 معتمد.", c2_l:"عرض شهادة C1 ↗",
+  c3_t:"الإنجليزية", c3_d:"IELTS أكاديمي، معدل عام 6.0.", c3_l:"عرض شهادة IELTS ↗",
+  c4_tag:"إيراسموس+ · 2025", c4_t:"تدريب إيراسموس+",
+  c4_d:"شهادة حضور — جامعة بوليتهنيكا تيميشوارا، رومانيا.", c4_l:"عرض شهادة الحضور ↗",
+  cc_t:"الدورات والشهادات", cc_n:"11 شهادة",
+  cc1_g:"دورة هندسية", cc1_d:"شهادة دورة في التحليل والنمذجة الإنشائية.",
+  cc2_g:"قمة · 2025", cc2_t:"قمة البناء الرقمي", cc2_d:"شهادة مشاركة — جامعة كارادينيز التقنية، طرابزون.",
+  cc3_g:"مؤتمر", cc3_t:"CESSCON 3 — مؤتمر طلاب الهندسة المدنية", cc3_d:"شهادة مشاركة — جمعية CESS، جامعة الخرطوم.",
+  cc4_t:"شهادة مشاركة إيراسموس+", cc4_d:"المشاركة في التدريب — جامعة بوليتهنيكا تيميشوارا، رومانيا.",
+  cc5_d:"شهادة دورة عبر الإنترنت — Coursera.",
+  cc6_d:"شهادة دورة عبر الإنترنت — Coursera.",
+  cc7_t:"التحكم بالإصدارات (Git وGitHub)", cc7_d:"شهادة دورة عبر الإنترنت — Coursera.",
+  cc8_t:"برمجة بايثون", cc8_d:"شهادة دورة بايثون — SoloLearn.",
+  cc9_t:"مايكروسوفت إكسل", cc9_d:"شهادة دورة إكسل — Udemy.",
+  cc10_g:"تطوع", cc10_t:"الهلال الأخضر التركي (Yeşilay)", cc10_d:"شهادة من جمعية الهلال الأخضر التركي.",
+  view_cert:"عرض الشهادة ↗", view_cert2:"عرض الشهادة ↗", view_cert3:"عرض الشهادة ↗",
+  view_cert4:"عرض الشهادة ↗", view_cert5:"عرض الشهادة ↗", view_cert6:"عرض الشهادة ↗",
+  view_cert7:"عرض الشهادة ↗", view_cert8:"عرض الشهادة ↗", view_cert9:"عرض الشهادة ↗",
+  view_cert10:"عرض الشهادة ↗",
+  s6_t:"المؤتمرات والتطوع", s6_n:"لوحة 6 من 7",
+  a1:"المؤتمر الدولي الرابع للهندسة المدنية والعمارة", a1_d:"05/2025 · طرابزون",
+  a2:"قمة البناء الرقمي", a2_d:"02/2025 · طرابزون",
+  a3:"عضو فريق الإدارة — GENÇ İMO (لجنة الأعضاء الشباب بنقابة المهندسين المدنيين)، جامعة كارادينيز التقنية",
+  a4:"مسؤول إعلامي — اتحاد الطلاب السودانيين في طرابزون",
+  a5:"متطوع — الهلال الأحمر التركي",
+  a6:"متطوع — جمعية طلاب الهندسة المدنية (CESS)، جامعة الخرطوم",
+  s7_t:"الفعاليات والأنشطة", s7_n:"سجل الصور",
+  g1:"لقاء أعضاء GENÇ İMO — نقابة المهندسين المدنيين (İMO)، فرع طرابزون",
+  g2:"ركن تعريفي لـ GENÇ İMO طرابزون — اتحاد غرف المهندسين والمعماريين الأتراك (TMMOB)",
+  g3:"الذكرى الـ68 للتأسيس — نقابة المهندسين المدنيين، فرع طرابزون",
+  g4:"نشاط خلوي لـ KTÜ GENÇ İMO — رحلة جماعية في مرتفعات طرابزون",
+  g5:"عضوية طلابية — نقابة المهندسين المدنيين (TMMOB İMO)، رقم العضوية 340221",
+  g6:"مع فريق إدارة GENÇ İMO — طرابزون",
+  g7:"متطوع في شباب الهلال الأحمر التركي — زيارة معرض متحفي",
+  g8:"لقاء قدامى المحاربين في فعالية تكريمية للهلال الأحمر التركي",
+  g9:"مع زملاء التطوع في الهلال الأحمر التركي — فعالية مدرسية مجتمعية",
+  g23:"تقديم الثقافة السودانية بالزي التقليدي — فعالية اتحاد الطلاب السودانيين، جامعة كارادينيز التقنية",
+  g24:"فعالية ثقافية سودانية بحضور مسؤولين محليين — سكنات وزارة الشباب والرياضة (GSB)، طرابزون",
+  g10:"فحص حديد تسليح الأعمدة — التدريب الميداني في شركة فن مهندسلك، طرابزون",
+  g11:"على قوالب البلاطة والسقالات، وخلفي البحر الأسود — موقع فن مهندسلك، طرابزون",
+  g12:"مع فريق الموقع على بلاطة خرسانية مسلحة — تدريب فن مهندسلك",
+  g13:"مع زميل في الموقع — أقفاص حديد تسليح الأعمدة في الخلفية، فن مهندسلك",
+  g14:"قمة البناء الرقمي 2025 — مشارك، جامعة كارادينيز التقنية، طرابزون، فبراير 2025",
+  g15:"المؤتمر الدولي الرابع للهندسة المدنية والعمارة (ICEARC'25) — طرابزون، مايو 2025",
+  g16:"في الموقع — منشأ خرساني مسبق الصب، تدريب إيراسموس+، رومانيا",
+  g17:"جامعة بوليتهنيكا تيميشوارا — كلية الهندسة المدنية، تدريب إيراسموس+",
+  g18:"برنامج التنقل إيراسموس+ — \"Changing lives, opening minds\"",
+  g19:"كرة القدم مع طلاب دوليين — إيراسموس+، تيميشوارا",
+  g20:"مع أصدقاء من جنسيات مختلفة — حياة إيراسموس+ في تيميشوارا، رومانيا",
+  g21:"يوم التخرج — بكالوريوس الهندسة المدنية، جامعة كارادينيز التقنية، يونيو 2026",
+  g22:"مع السفير السوداني لدى تركيا — حفل التخرج الدولي الخامس عشر للطلاب (منح تركيا / YTB)، يونيو 2026",
+  f_t:"لنبنِ شيئًا معًا",
+  f_s:"متاح لوظائف حديثي التخرج في الهندسة المدنية والإنشائية، وللتعاون في البرمجيات الهندسية والبحث العلمي.",
+  f_loc:"طرابزون، تركيا",
+  f_r:"المعرّفون",
+  r1_t:"أ. د. فولكان كهيا", r1_d:"جامعة كارادينيز التقنية، الهندسة المدنية",
+  r2_t:"أ. د. شوكت آتش", r2_d:"جامعة كارادينيز التقنية، الهندسة المدنية",
+  col_l:"أحمد محمد الحسن أحمد — مهندس مدني",
+  col_r:"أُعدّ: 2026 · مراجعة أ"
+}
+};
+
+/* Capture English defaults from the DOM, then wire the switcher */
+const EN = {};
+document.querySelectorAll('[data-i18n]').forEach(el => { EN[el.dataset.i18n] = el.innerHTML; });
+
+function setLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n;
+    el.innerHTML = (lang === 'en') ? EN[k] : (I18N[lang][k] ?? EN[k]);
+  });
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-switch button').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('lang', lang); } catch(e){}
+}
+document.querySelectorAll('.lang-switch button').forEach(b =>
+  b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+/* Theme toggle */
+function setTheme(t){
+  document.documentElement.dataset.theme = t;
+  try { localStorage.setItem('theme', t); } catch(e){}
+}
+document.getElementById('themeToggle').addEventListener('click', () =>
+  setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+
+/* Restore saved preferences (default: English, light) */
+try {
+  const savedLang = localStorage.getItem('lang');
+  if (savedLang && savedLang !== 'en') setLang(savedLang);
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) setTheme(savedTheme);
+} catch(e){}
+
+/* Scroll-reveal animations (JS-gated: without JS everything stays visible) */
+document.documentElement.classList.add('js');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+/* Safety net: never leave a section hidden */
+setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('in')), 1500);
+</script>
+
+</body>
+</html>
